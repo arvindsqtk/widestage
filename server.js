@@ -95,7 +95,7 @@ if (global.env != 'test')
         } else {
                 var serverConfig = require('./server/serverConfig/serverConfig.js');
                 serverConfig.init(app, function(){
-                    var ipaddr  = global.config.ip || '127.0.0.1';
+                    var ipaddr  = global.config.ip || '0.0.0.0';
                     var port    = global.config.port  || 8089;
                     console.log( "the port is " + port);
                     global.server = app.listen(port,ipaddr, function() {
