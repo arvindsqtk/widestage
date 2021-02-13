@@ -4,7 +4,7 @@
     <!--ng-if="selectedReport.reportType == 'grid' || selectedReport.reportType == 'vertical-grid' || selectedReport.reportType == 'dxGrid'"-->
     <wst-explorer-column-area report="report" query="query" on-select-column="itemSelected"></wst-explorer-column-area>
 
-    <button  id="queryExecute" class="btn btn-danger queries-run-button" ng-show="!interactiveMode" class="pull-right" ng-click="processStructure(true);"  style="padding: 3px 10px;" ng-disabled="!query.columns || query.columns.length == 0"><i class="fa fa-bolt hand-cursor" ></i></button>
+    <button  id="queryExecute" class="btn btn-danger queries-run-button" ng-show="!interactiveMode" class="pull-right" ng-click="processStructure(true);"  style="padding: 3px 10px; margin-right: -10px" ng-disabled="!query.columns || query.columns.length == 0"><i class="fa fa-bolt hand-cursor" ></i></button>
 
     <wst-pro-explorer-options on-clear-cache-and-refresh="processStructure"></wst-pro-explorer-options>
 

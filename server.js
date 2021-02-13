@@ -75,8 +75,8 @@ if (global.env != 'test')
         if (cluster.isMaster) {
             var numCPUs = require('os').cpus().length;
 
-            // Fork workers.
-            for (var i = 0; i < numCPUs; i++) {
+            // Fork workers. bka
+            for (var i = 0; i < 1; i++) {
                 console.log ('forking ',i);
                 cluster.fork();
             }

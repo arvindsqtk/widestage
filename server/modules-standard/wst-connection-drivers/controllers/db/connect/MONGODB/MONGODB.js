@@ -699,8 +699,10 @@ function getSqlEntityName(collection)
 
 exports.processJoinedCollections = function(req,query,collections, dataSource, thereAreJoins,params,sqlString, done) {
     processJoinedCollections(req,query,collections, dataSource,thereAreJoins, 0,params,sqlString, function(result){
-        if (result.result == 0)
-            done(result);
+        if(typeof result !== 'undefined')
+            if(typeof result.result !== 'undefined')
+                if (result.result == 0)
+                    done(result);
 
 
         if (collections.length > 1)
