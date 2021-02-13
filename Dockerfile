@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:13.0.1
 
 MAINTAINER Widestage  <widestage.com>
 
@@ -12,6 +12,8 @@ RUN npm install
 
 RUN bower install --allow-root --force-latest
 
-EXPOSE 80
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
-CMD ["npm" , "start"]
+RUN chmod a+x ./docker-entrypoint.sh
+
+ENTRYPOINT ["./docker-entrypoint.sh"]

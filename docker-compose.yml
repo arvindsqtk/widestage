@@ -7,7 +7,7 @@ services:
     volumes:
       - db-data:/data/db
     ports:
-      - "27017:27017"
+      - "37017:27017"
   widestage:
     build: .
     image: widestage/widestage
@@ -18,7 +18,11 @@ services:
     environment:
       - IP=0.0.0.0
       - MONGOHOST=mongo
+    volumes:
+      - ./docker-entrypoint.sh:/srv/app/docker-entrypoint.sh
     ports:
-      - "80:80"
+      - "8089:8089"
+      - "9229:9229"
+      - "9230:9230"
 volumes:
   db-data:

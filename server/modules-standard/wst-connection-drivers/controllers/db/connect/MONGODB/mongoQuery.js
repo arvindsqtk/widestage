@@ -212,11 +212,11 @@ function generateSQL(req,query,collection, dataSource, params, thereAreJoins, do
 
 
         //If there are joins, then we can´t set up limits...
-        if (!thereAreJoins && (dataSource.params.packetSize > 0))
+        if (!thereAreJoins)
         {
             if(query.pageSize > 0)
                 aggregation.push({ $limit: query.pageSize });
-            else if (params.page) {
+            else if ((dataSource.params.packetSize > 0) && params.page) {
                 if (params.page > 0)
                     aggregation.push({ $skip: (params.page-1)*dataSource.params.packetSize });
                 aggregation.push({ $limit: dataSource.params.packetSize });
