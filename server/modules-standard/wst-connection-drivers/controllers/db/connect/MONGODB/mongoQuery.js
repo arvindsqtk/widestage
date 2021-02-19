@@ -228,7 +228,7 @@ function generateSQL(req,query,collection, dataSource, params, thereAreJoins, do
 
 
 
-        var fixedQuery = fnChopDoubeQuoteForDate(collection.collectionName+'.aggregate('+JSON.stringify(aggregation)+')');
+        var fixedQuery = collection.collectionName+'.aggregate('+JSON.stringify(aggregation)+')';
         var theQuery = 'db.'+fixedQuery;
 
         done(fixedQuery,elements);
@@ -634,7 +634,7 @@ function dateFilter(filterValue, filter)
             return {$lt: lastDate};
     } else {
 
-      var searchDate = "ISODate('" + moment(filterValue).format('YYYY-MM-DD')+'T00:00:00.000Z' + "')";
+      var searchDate = moment(filterValue).format('YYYY-MM-DD')+'T00:00:00.000Z';
       var theNextDay = moment(filterValue).add(1,'days').format('YYYY-MM-DD')+'T00:00:00.000Z';
       var lastDate =  moment(filter.filterText2).add(1,'days').format('YYYY-MM-DD')+'T00:00:00.000Z';
 

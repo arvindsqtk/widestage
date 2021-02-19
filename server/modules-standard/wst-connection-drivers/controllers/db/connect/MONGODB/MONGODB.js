@@ -184,7 +184,15 @@ function runQuery(query,req, queryMetaData,done) {
 
             if (paramsStr && paramsStr != '')
                 try {
-                    var params = JSON.parse(paramsStr);
+                    var params = JSON.parse(paramsStr, function (key, value) {
+                                      if (typeof value === 'string') {
+                                        var a = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)(Z|([+\-])(\d{2}):(\d{2}))$/.exec(value);
+                                        if (a) {
+                                          return new Date(value);
+                                        }                                      
+                                      }
+                                      return value;
+                                 });
                 }
                 catch (err) {
                     console.log(err);
