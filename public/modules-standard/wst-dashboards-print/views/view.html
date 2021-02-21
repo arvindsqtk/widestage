@@ -1,0 +1,15 @@
+<div class="alert" ng-if="showNotDashFound" ng-i18next="Dashboard not found">
+
+</div>
+
+<div ng-if="!showNotDashFound" class="dash-view-header">
+    <div class="dash-view-header-title">
+        <h3>
+            {{selectedDash.dashboardName}}
+        </h3>
+    </div>
+</div>
+
+<wst-dashboard-prompts-block dashboard="selectedDash"></wst-dashboard-prompts-block>
+
+<dash-widget-container ng-if="!showNotDashFound" dashboard="selectedDash" designer-mode="false"></dash-widget-container>

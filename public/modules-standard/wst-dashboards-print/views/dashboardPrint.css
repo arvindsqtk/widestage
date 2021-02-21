@@ -1,0 +1,40 @@
+
+.dash-view-header
+{
+    margin-bottom: 5px;
+    height: 45px;
+    background: #f6f6f7;
+    border-bottom: 1px solid #e4e5e6;
+    color: #3e3f40;
+    font-size: 24px;
+    font-weight: 100;
+    padding: 0 20px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #72A230;
+}
+
+.dash-view-header-title
+{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.app-ui-view {
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    right: -17px;
+    left: 15px;
+    overflow-y: auto;
+}
