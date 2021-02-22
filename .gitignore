@@ -8,3 +8,4 @@ server/data/test
 server/data/production
 server/data/dev
 .git
+.idea/

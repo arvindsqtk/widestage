@@ -38,3 +38,13 @@
     left: 15px;
     overflow-y: auto;
 }
+
+.wst-dashboard-container .wst-dash-widget-band
+{
+    width: 700px;
+}
+
+.clsRepeatVS {
+    overflow-y: hidden;
+    position: relative;
+}

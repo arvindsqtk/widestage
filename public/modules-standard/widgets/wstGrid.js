@@ -220,7 +220,7 @@ app.directive('wstGrid', function($compile, $rootScope,$i18next,queryModel,dataT
                       //TODO:summary_row_height
                       var bottom = getCalculusRows()*20;
 
-                      htmlCode += '<div vs-repeat style="width:100%;overflow-y: scroll;border: 1px solid #ccc;align-items: stretch;position: absolute;bottom: '+bottom+'px;top: '+(theProperties.header_height+theProperties.gridTop)+'px;'+backgroudStyle+'" scrolly="gridGetMoreData(\''+id+'\')">';
+                      htmlCode += '<div vs-repeat class="clsRepeatVS" style="width:100%;border: 1px solid #ccc;align-items: stretch;bottom: '+bottom+'px;top: '+(theProperties.header_height+theProperties.gridTop)+'px;'+backgroudStyle+'" scrolly="gridGetMoreData(\''+id+'\')">';
 
                       htmlCode += '<div ndType="repeaterGridItems" class="repeater-data container-fluid" ng-repeat="item in (getQuery(\''+hashedID+'\').data) ? getQuery(\''+hashedID+'\').data : getQuery(\''+hashedID+'\').data | filter:theFilter | orderBy:getReport(\''+hashedID+'\').predicate:getReport(\''+hashedID+'\').reverse  " style="'+rowStyle+'"  >';
 

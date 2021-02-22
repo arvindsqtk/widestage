@@ -2242,3 +2242,8 @@ display: none;
 #explorerDropdown .dropdown-toggle::after {
     display: none;
 }
+
+.clsRepeatVS {
+    overflow-y: scroll;
+    position: absolute;
+}
