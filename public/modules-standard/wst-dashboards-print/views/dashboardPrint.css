@@ -48,3 +48,7 @@
     overflow-y: hidden;
     position: relative;
 }
+
+.dash-widget-panel {
+    margin-top: 10px;
+}
